@@ -37,7 +37,7 @@ def estimate_balance_prob_in_rand_bsts_with_num_nodes(num_rbsts, num_nodes, a, b
 
 def estimate_balance_probs_in_rand_bsts(num_nodes_start, num_nodes_end, num_rbsts, a, b):
     d = {}
-    for num_nodes in xrange(num_nodes_start, num_nodes_end+1):
+    for num_nodes in range(num_nodes_start, num_nodes_end+1):
         d[num_nodes] = estimate_balance_prob_in_rand_bsts_with_num_nodes(num_rbsts, num_nodes, a, b)
     return d
 
