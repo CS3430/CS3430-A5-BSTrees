@@ -1,3 +1,10 @@
+##################################################
+## module: testMain.py
+## author: Misty Jenkins
+## A#: A01489174
+## test module for rand_bst
+## 10/7/2016
+##################################################
 from py3_rand_bst import *
 
 print("List probablility:")

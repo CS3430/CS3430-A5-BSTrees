@@ -1,3 +1,11 @@
+##################################################
+## module: py3_rand_bst.py
+## author: Misty Jenkins
+## A#: A01489174
+## estimates the probability of a binary search tree being a list
+##  or a balanced tree by generating multiple random binary trees
+## 10/7/2016
+##################################################
 from BSTree import BSTree
 import random
 
