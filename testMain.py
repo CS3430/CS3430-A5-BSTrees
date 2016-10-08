@@ -1,9 +1,11 @@
-from py2_rand_bst import *
+from py3_rand_bst import *
 
-d = estimate_list_probs_in_rand_bsts(5, 200, 1000, 0, 500000)
+print("List probablility:")
+d = estimate_list_probs_in_rand_bsts(5, 15, 200, 0, 1000000)
 for k, v in d.iteritems():
-    print('probability of linearity in rbsts with %d nodes = %f' % (k, v[0]))
+    print("probability of linearity in rbsts with %d nodes = %f" % (k, v[0]))
 
-d = estimate_balance_probs_in_rand_bsts(5, 200, 1000, 0, 500000)
+print("\n\nBalanced probablility:")
+d = estimate_balance_probs_in_rand_bsts(5, 100, 200, 0, 1000000)
 for k, v in d.iteritems():
-    print('probability of balance in rbsts with %d nodes = %f' % (k, v[0]))
+    print("probability of balance in rbsts with %d nodes = %f" % (k, v[0]))

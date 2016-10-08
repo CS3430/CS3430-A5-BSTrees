@@ -1,26 +1,31 @@
-from BSTNode import BSTNode
 from BSTree import BSTree
 import random
 
 ## bugs to vladimir dot kulyukin at gmail dot com
 
-## implement this method
 def gen_rand_bst(num_nodes, a, b):
-    pass
+    tempBst = BSTree()
+    while tempBst.getNumNodes() < num_nodes:
+        tempBst.insertKey(random.randint(a,b))
+    return tempBst
 
-## implement this method
 def estimate_list_prob_in_rand_bsts_with_num_nodes(num_rbsts, num_nodes, a, b):
-    pass
+    rbsts = [gen_rand_bst(num_nodes,a,b) for i in range(0, num_rbsts)]
+    numLists = sum(b.isList() for b in rbsts)
+    prob = numLists/float(num_rbsts)
+    return (prob, rbsts)
 
 def estimate_list_probs_in_rand_bsts(num_nodes_start, num_nodes_end, num_rbsts, a, b):
     d = {}
-    for num_nodes in xrange(num_nodes_start, num_nodes_end+1):
+    for num_nodes in range(num_nodes_start, num_nodes_end+1):
         d[num_nodes] = estimate_list_prob_in_rand_bsts_with_num_nodes(num_rbsts, num_nodes, a, b)
     return d
 
-## implement this method
 def estimate_balance_prob_in_rand_bsts_with_num_nodes(num_rbsts, num_nodes, a, b):
-    pass
+    rbsts = [gen_rand_bst(num_nodes, a, b) for i in range(0, num_rbsts)]
+    numLists = sum(b.isBalanced() for b in rbsts)
+    prob = numLists / float(num_rbsts)
+    return (prob, rbsts)
 
 def estimate_balance_probs_in_rand_bsts(num_nodes_start, num_nodes_end, num_rbsts, a, b):
     d = {}
